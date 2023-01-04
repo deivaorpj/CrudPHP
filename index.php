@@ -2,7 +2,7 @@
 require 'config.php';
 
 $lista = [];
-$sql = $pdo->query("SELECT * FROM locacao");
+$sql = $pdo->query("SELECT * FROM usuarios");
 if($sql->rowCount() > 0) {
     $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -15,7 +15,7 @@ if($sql->rowCount() > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Crud</title>
 </head>
 <body>
 <section>   

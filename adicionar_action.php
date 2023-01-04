@@ -6,12 +6,12 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
 if($name && $email) {
 
-    $sql = $pdo->prepare("SELECT * FROM locacao WHERE email = :email");
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
     $sql->bindValue(':email', $email);
     $sql->execute();
 
     if($sql->rowCount() === 0) {
-        $sql = $pdo->prepare("INSERT INTO locacao (nome, email) VALUES (:name, :email)");
+        $sql = $pdo->prepare("INSERT INTO usuarios (nome, email) VALUES (:name, :email)");
         $sql->bindValue(':name', $name);
         $sql->bindValue(':email', $email);
         $sql->execute();
